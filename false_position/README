@@ -12,6 +12,8 @@ fx: the function value at the estimated root
 ea: the approximate relative error (%)
 iter: the number of iterations performed
 
+Description:
+
 Is a root-finding algorithm used to solve a single nonlinear equation with one unknown variable. It is an iterative method that starts with two initial guesses of the root, one at the lower end of the interval and one at the upper end. It then computes the intersection of the line segment connecting the two initial guesses with the x-axis, and uses the resulting point as the next approximation to the root.
 
 Example usage:
