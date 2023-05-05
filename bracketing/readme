@@ -1,22 +1,18 @@
-% Define problem constants
-g = 9.81;
-mu = 0.55;
-F = 150;
-m = 25;
-x = linspace(-pi/2,pi/2);
+Inputs:
 
-% Define the function to be solved for. Is the angle specified in radians or degrees?
-func = @(x) ((mu*m*g)./(cos(x) + (mu*sin(x))))- F;
+g: the acceleration due to gravity in m/s^2.
+mu: the coefficient of friction between the surface and the object.
+F: the force applied to the object in N.
+m: the mass of the object in kg.
+x: a vector of angles in radians to be evaluated.
 
-% THINK, what makes range sense for angle?
+Outputs:
 
-% Plot your function. Does plotting give you an idea about where the root is?
-plot(x,func(x),'c');
+angle: the angle that solves the problem.
+fx: the function value at the solved angle.
+ea: the bisection error estimate.
+iter: the number of bisection iterations.
 
-% Finaly solve for the root using the bisection script given to you, which can be called as:
-[root, fx, ea, iter] = bisect(func, 0, pi/2);
+Description:
 
-% These variables will be checked for your final answer:
-angle = rad2deg(root);
-format long
-fprintf('root %f', angle);
+Bisection uses a series of splitting the interval in half to find where the line crosses the X axis. Goes until the error is small enough to call a number that you are looking for. 
