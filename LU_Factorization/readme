@@ -8,4 +8,6 @@ L: lower triangular matrix of size n-by-n
 U: upper triangular matrix of size n-by-n
 P: permutation matrix of size n-by-n, such that PA = LU
 
+Description:
+
 The function finds L and U as the identity matrix and A and then finds P as another identity matrix. It then iterates through the rows and columns of U to perform Gaussian elimination with partial pivoting, swapping rows as if needed to make sure the pivot element in each column has the largest magnitude. The multipliers used for the elimination are stored in L, and U is updated as a result. The function checks that the product of P and A equals the product of L and U and if it doesnt then you get an error message.  
