@@ -5,4 +5,6 @@
 Outputs:
  I: the numerical integral calculated
  
+ Description:
+ 
  If the number of intervals is odd the use simpsons 1/3 rule if not then use simpsons 3/8 rule.
