@@ -1,16 +1,16 @@
+Inputs:
+func: the function to find the root of
+xl: the lower bound of the interval to search for the root
+xu: the upper bound of the interval to search for the root
+es (optional): the desired relative error (default: 0.0001)
+maxit (optional): the maximum number of iterations (default: 200)
+varargin (optional): additional parameters for the function
 
-This is a Matlab code for implementing the false position method to find the root of a function. The code takes as inputs the function to 
-find the root of, the lower and upper bounds of the interval to search for the root, the desired relative error (es), the maximum number 
-of iterations (maxit), and any additional parameters that may be needed by the function. The code then iteratively narrows down the interval and 
-estimates the root of the function using the false position method.
-
-The while loop in the code updates the lower and upper bounds of the interval based on the function values at those bounds, and calculates 
-the estimated root using the false position formula. The code then checks if the estimated root is the exact root (i.e., the function value at the 
-root is zero), and updates the approximate relative error accordingly. The loop continues until the desired relative error is achieved or 
-the maximum number of iterations is reached.
-
-Finally, the code returns the estimated root, the function value at the root, the approximate relative error, and the number of iterations taken 
-to converge to the root.
+Outputs:
+root: the estimated root of the function
+fx: the function value at the estimated root
+ea: the approximate relative error (%)
+iter: the number of iterations performed
 
 Example usage:
 To find the root of the function f(x) = x^3 + 4*x^2 - 10 on the interval
