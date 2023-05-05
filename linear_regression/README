@@ -1,40 +1,17 @@
-function [fX, fY, slope, intercept, Rsquared] = linearRegression(x,y)
-%linearRegression Computes the linear regression of a data set
 
-if length(x)~=length(y)
-    error('Make sure x and y are same size')
-end
-%sorting x and y
-[sortedY, sortOrder] = sort(y);
-sortedX = x(sortOrder);
-y = sortedY
-x = sortedX
+Inputs:
 
-% Outliets
-n = length(x);
-Q1= floor((n+1)/4);
-Q3= floor((3*n+3)/4);
-IQR=Q3-Q1;
+x: a vector of numerical values representing the independent variable of a data set
+y: a vector of numerical values representing the dependent variable of a data set
 
-threshold = 1.5*IQR;
-outliers = y < (Q1 - threshold) | y > (Q3 + threshold);
-fY = y(~outliers)
-fX = x(~outliers)
+Outputs:
 
-% Linear Regression
-n_new=length(y);
-y_avg=mean(fY);
-x_avg=mean(fX);
-SSx=sum((fX-x_avg).^2);
-SP=sum((fX-x_avg).*(fY-y_avg));
-slope = SP/SSx
+fX: a vector of numerical values representing the independent variable of a data set with outliers removed
+fY: a vector of numerical values representing the dependent variable of a data set with outliers removed
+slope: a numerical value representing the slope of the linear regression line
+intercept: a numerical value representing the y-intercept of the linear regression line
+Rsquared: a numerical value representing the coefficient of determination (R-squared) of the linear regression model.
 
-intercept = y_avg-slope.*x_avg
+Description:
 
-line = slope.*fX+intercept
-%Rsquared
-SStot=sum((fY-y_avg).^2);
-SSres=sum((fY-line).^2);
-Rsquared=1-(SSres/SStot)
-
-end
+Linear regression is a statistical method used to model the relationship between two continuous variables. It is used to estimate the value of one variable based on the value of another variable. The method involves fitting a straight line to a set of data points such that the distance between the line and the data points is minimized. The resulting line can then be used to predict the value of one variable based on the value of the other variable.
